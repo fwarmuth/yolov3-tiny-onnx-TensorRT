@@ -781,7 +781,7 @@ def main():
         raise Exception("This script is only compatible with python2, please re-run this script with python2. The rest of this sample can be run with either version of python.")
 
     # Download the config for YOLOv3 if not present yet, and analyze the checksum:
-    cfg_file_path = '/home/nvidia/yolov3-tiny2onnx2trt/yolov3-tiny.cfg'
+    cfg_file_path = '/home/fwarmuth/data/projects/yolov3-tiny-onnx-TensorRT/yolov3-tiny-person360.cfg'
 
     # These are the only layers DarkNetParser will extract parameters from. The three layers of
     # type 'yolo' are not parsed in detail because they are included in the post-processing later:
@@ -808,7 +808,7 @@ def main():
 
     # We want to populate our network with weights later, that's why we download those from
     # the official mirror (and verify the checksum):
-    weights_file_path = '/home/nvidia/yolov3-tiny2onnx2trt/yolov3-tiny.weights'
+    weights_file_path = '/home/fwarmuth/data/projects/yolov3-tiny-onnx-TensorRT/yolov3-tiny-person360_100000.weights'
 
     # Now generate an ONNX graph with weights from the previously parsed layer configurations
     # and the weights file:
@@ -823,7 +823,7 @@ def main():
     onnx.checker.check_model(yolov3_model_def)
 
     # Serialize the generated ONNX graph to this file:
-    output_file_path = 'yolov3-tiny.onnx'
+    output_file_path = 'yolov3-tiny-person360-100000.onnx'
     onnx.save(yolov3_model_def, output_file_path)
 
 if __name__ == '__main__':

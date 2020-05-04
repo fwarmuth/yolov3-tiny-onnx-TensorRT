@@ -139,11 +139,11 @@ def main():
     input_size = 416
     batch_size = 1
     fp16_on = True
-    onnx_file_path = 'yolov3-tiny.onnx'
-    engine_file_path = 'yolov3-tiny.trt'
-    input_file_list = '/home/nvidia/yolov3-tiny2onnx2trt/imagelist.txt'
-    IMAGE_PATH = '/home/nvidia/yolov3-tiny2onnx2trt/images/'
-    save_path = '/home/nvidia/yolov3-tiny2onnx2trt/'
+    onnx_file_path = 'yolov3-tiny-person360-100000.onnx'
+    engine_file_path = 'yolov3-tiny-person360-100000.trt'
+    input_file_list = '/home/fwarmuth/data/projects/yolov3-tiny-onnx-TensorRT/imagelist.txt'
+    IMAGE_PATH = '/home/fwarmuth/data/projects/yolov3-tiny-onnx-TensorRT/images/'
+    save_path = '/home/fwarmuth/data/projects/yolov3-tiny-onnx-TensorRT/'
     
     output_shapes_416 = [(batch_size, 18, 13, 13), (batch_size, 18, 26, 26)]
     output_shapes_480 = [(batch_size, 18, 15, 15), (batch_size, 18, 30, 30)]

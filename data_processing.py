@@ -11,12 +11,12 @@ def load_label_categories(label_file_path):
     categories = [line.rstrip('\n') for line in open(label_file_path)]
     return categories
 
-LABEL_FILE_PATH = '/home/nvidia/yolov3-tiny2onnx2trt/coco_labels.txt'
+LABEL_FILE_PATH = '/home/fwarmuth/data/yolov3-tiny2onnx2trt/person360.names'
 ALL_CATEGORIES = load_label_categories(LABEL_FILE_PATH)
 
 # Let's make sure that there are 80 classes, as expected for the COCO data set:
 CATEGORY_NUM = len(ALL_CATEGORIES)
-assert CATEGORY_NUM == 80
+assert CATEGORY_NUM == 1
 
 
 class PreprocessYOLO(object):
